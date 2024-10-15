@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+message StartMeasurements {
+}
+
+message StopMeasurements {
+}
+
+message Request {
+    oneof data {
+        // from backend
+        StartMeasurements startMeasurements = 1;
+        StopMeasurements stopMeasurements = 2;
+    }
+}
+
+message DataStream {
+    repeated float value = 1;
+}

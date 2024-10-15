@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/google-closure-library@20211201.0.0/closure/goog/base.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/google-protobuf@3.19.0/google-protobuf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script><!-- ajouter par moi-->
+    <title>ITODYS Test Interface</title>
+    <link rel="stylesheet" href="index.css">
+	<script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>-->
+</head>
+
+<body class="mdc-typography">
+    <div class="mdc-layout-grid">
+
+        <div class="mdc-layout-grid__inner">
+
+            <div class="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
+                <div class="mdc-card card-internals">
+                    <div class="card-content">
+                        <div class="mdc-typography mdc-typography--headline6">Device</div>
+                    </div>
+                    <div class="mdc-card__actions">
+                        <!-- <py-script>print("hello les petits fous")</py-script> -->
+                        <button onclick="onConnectButtonClick()"
+                            class="app-connect-button mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">
+                            <span class="app-connect-button-label mdc-button__label">Connect</span>
+                        </button>
+                        <button onclick="startMeasure()"
+                            class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">
+                            <span class="mdc-button__label">Start Measure</span>
+                        </button>
+                        <button onclick="stopMeasure()"
+                            class="mdc-button mdc-button--raised mdc-card__action mdc-card__action--button">
+                            <span class="mdc-button__label">Stop Measure</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="error-message" class="error-message" style="display: none;"></div>
+    
+    
+    
+    <div id="graph"></div>
+    <canvas id="myChart"></canvas>
+
+    <script>
+        // Needed to use node-cobs
+        let Buffer = Uint8Array;
+        let require = ()=>{};
+        let module = {};
+    </script>
+    <script src="node-cobs/index.js"></script>
+    <script src="proto.js"></script>
+    <script type="application/javascript" src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+[submodule "protocol"]
+	path = protocol
+	url = git@gitlab.piwio.fr:piwio/itodys/protocol.git
+[submodule "node-cobs"]
+	path = node-cobs
+	url = https://github.com/tcr/node-cobs.git
